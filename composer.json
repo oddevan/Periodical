@@ -1,0 +1,21 @@
+{
+	"name": "oddevan/periodical",
+	"description": "Assemble an issue of a periodical publication as HTML and PDF",
+	"type": "project",
+	"require": {
+		"league/commonmark": "^2.5",
+		"symfony/yaml": "^7.1"
+	},
+	"license": "AGPL-3.0-only",
+	"autoload": {
+		"psr-4": {
+			"dddEvan\\Periodical\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Evan Hildreth",
+			"email": "me@eph.me"
+		}
+	]
+}

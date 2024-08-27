@@ -1,0 +1,8 @@
+publication: Periodical
+series: 1
+issue: 1
+stories:
+  - letter.md
+  - Bored.md
+  - The Meeting.md
+  - backpage.md
