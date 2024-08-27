@@ -1,0 +1,137 @@
+:root {
+	/* Shorthand font prop: https://developer.mozilla.org/en-US/docs/Web/CSS/font */
+	--body-font: 18px/1.5 "Fanwood Text", serif;
+	--code-font: 1em "JetBrains Mono", monospace;
+	--sans-font: 1em "League Spartan", sans-serif;
+	--head-font: 400 36px "League Gothic", sans-serif;
+}
+
+@media print {
+	:root {
+		--body-font: 11pt/1.1 "Fanwood Text", serif;
+		--head-font: 400 24pt "League Gothic", sans-serif;
+	}
+	
+	@page {
+		size: 4.25in 5.5in;
+		margin: 0.25in;
+		margin-bottom: 0.35in;
+	}
+	
+	@page:left {
+		@bottom-left {
+			content: counter(page);
+		}
+	}
+	
+	@page:right {
+		@bottom-right {
+			content: counter(page);
+		}
+	}
+	
+	@page:first {
+		@bottom-right {
+			content: none;
+		}
+	}
+	@page:nth(2) {
+		@bottom-left {
+			content: none;
+		}
+	}
+	@page:nth(23) {
+		@bottom-right {
+			content: none;
+		}
+	}
+	@page:nth(24) {
+		@bottom-left {
+			content: none;
+		}
+	}
+	
+	section:not(.nobreak) {
+		break-before: page;
+	}
+	
+	section.chapter {
+		break-before: right;
+	}
+}
+
+body {
+	font: var(--body-font);
+  font-optical-sizing: auto;
+}
+
+h1, h2, h3, h4 {
+	font: var(--head-font);
+	text-align: center;
+	margin-block-start: 0;
+	margin-block-end: 1em;
+	text-wrap: balance;
+}
+
+p {
+	margin-block: 0;
+	text-wrap: pretty;
+	word-break: auto-phrase;
+	hyphen: auto;
+
+	&:not(blockquote p) {
+		text-indent: 1em each-line;
+	}
+}
+
+code {
+	font: var(--code-font);
+	font-size: 0.9em;
+}
+
+code:not(pre code) {
+	background: #ddd;
+	padding-inline: .2em;
+}
+
+pre {
+	margin-block: .5em;
+	border: 1px solid grey;
+	padding: .5em;
+
+	& code {
+		display: block;
+		white-space: pre-wrap;
+		text-indent: 2.5em each-line hanging;
+	}
+}
+
+hr {
+	border: 0;
+	margin-block: .7em;
+}
+
+blockquote {
+	font: var(--sans-font);
+	margin-block: .5em;
+	margin-inline-start: 2em;
+}
+
+p.tbc {
+	font: var(--sans-font);
+	color: grey;
+	margin-block: 1em;
+	text-align: end;
+}
+
+@media screen {
+	section {
+		margin: 2em auto;
+		max-width: 30rem;
+
+		&:not(.cover) {
+			border-top: 1px solid grey;
+			padding-top: 2em;
+		}
+	}
+}

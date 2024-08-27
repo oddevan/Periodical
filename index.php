@@ -28,10 +28,17 @@ foreach ($issue['stories'] as $filename) {
 
 ?>
 <!DOCTYPE html>
-<head><title>Periodical</title></head><body>
+<head>
+	<title>Periodical</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&family=Raleway:wght@300&display=swap">
+	<link rel="stylesheet" href="layout.css">
+</head>
+<body>
 <!--
 <?php print_r($issue); ?>
 -->
+
+<section class="toc">
 
 <h2>In this issue</h2>
 
@@ -52,12 +59,24 @@ foreach ($issue['stories'] as $filename) {
 	<?php endforeach; ?>
 </ol>
 
+<?php if (!empty($issue['cover'])) : ?>
+<p class="cover-credit">Cover<?=
+	empty($issue['cover']['title']) ? '' : ': &quot;' . $issue['cover']['title'] . '&quot;'
+?> by <?= $issue['cover']['artist'] ?></p>
+<?php endif; ?>
+
+<p class="colophon"><?= $issue['colophon'] ?></p>
+
+</section>
+
 <?php foreach ($issueHtml as $index => $story) : ?>
 	<?php $info = $issue['storyData'][$index]; ?>
+	<section>
 	<h2><?= $info['title'] ?></h2>
 	<?= $story ?>
 	<?php if (!empty($info['stinger'])) : ?>
 		<p class="stinger"><?= $info['stinger'] ?></p>
 	<?php endif; ?>
+	</section>
 <?php endforeach; ?>
 </body></html>
