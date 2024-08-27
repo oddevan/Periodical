@@ -2,8 +2,8 @@
 	/* Shorthand font prop: https://developer.mozilla.org/en-US/docs/Web/CSS/font */
 	--body-font: 18px/1.5 "Fanwood Text", serif;
 	--code-font: 1em "JetBrains Mono", monospace;
-	--sans-font: 1em "League Spartan", sans-serif;
-	--head-font: 400 36px "League Gothic", sans-serif;
+	--sans-font: 1em "Raleway", sans-serif;
+	--head-font: 400 36px "Raleway", sans-serif;
 }
 
 @media print {
@@ -122,6 +122,52 @@ p.tbc {
 	color: grey;
 	margin-block: 1em;
 	text-align: end;
+}
+
+section.cover {
+	background-size: cover;
+	height: 35em;
+	max-height: 100%;
+	padding: 3em 1em;
+
+	&.invert {
+		color: white;
+	}
+
+	svg {
+		width: 100%;
+		height: auto;
+		margin-block-end: .5em;
+	}
+}
+
+section.toc {
+	h3 {
+		font-size: 1.5rem;
+		margin-block-end: 0;
+		text-align: start;
+	}
+
+	p {
+		text-indent: 0;
+		font: var(--sans-font);
+		font-size: 1rem;
+		line-height: 1.2;
+
+		&.cover-credit {
+			margin-block-end: 1em;
+		}
+
+		&.colophon {
+			font-size: 0.8em;
+			padding: 0.5em;
+			border: 1px solid grey;
+		}
+	}
+
+	li {
+		margin-block-end: 0.5em;
+	}
 }
 
 @media screen {

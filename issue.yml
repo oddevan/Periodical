@@ -10,4 +10,5 @@ cover:
   src: sandra-beatrice-molnar-VWXnJjORd6k-unsplash.jpg
   link: https://unsplash.com/photos/a-stream-running-through-a-lush-green-field-VWXnJjORd6k
   artist: Sandra-Beatrice Molnar
+  invert: true
 colophon: Typeset in Raleway and Fanwood Text from The League of Movable Type. Assembled with Periodical by oddEvan. &copy; All rights reserved

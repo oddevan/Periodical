@@ -9,7 +9,7 @@
 	"license": "AGPL-3.0-only",
 	"autoload": {
 		"psr-4": {
-			"dddEvan\\Periodical\\": "src/"
+			"oddEvan\\Periodical\\": "src/"
 		}
 	},
 	"authors": [
