@@ -3,9 +3,6 @@ title: BORED
 rating: 0
 synopsis: Sherlock is bored; someone call a doctor.
 stinger: To be continued...
-warnings:
-  - extreme bordom
-  - superwholock
 ---
 
 "BORED!"
