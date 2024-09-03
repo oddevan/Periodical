@@ -37,9 +37,6 @@ foreach ($issue['stories'] as $filename) {
 	<link rel="stylesheet" href="paged.css">
 </head>
 <body>
-<!--
-<?php print_r($issue); ?>
--->
 
 <section
 	class="cover nobreak<?= empty($issue['cover']['invert']) ? '' : ' invert' ?>"
@@ -73,6 +70,7 @@ foreach ($issue['stories'] as $filename) {
 
 <ol>
 	<?php foreach ($issue['storyData'] as $info) : ?>
+		<?php if (!empty($info['interstitial'])) { continue; } ?>
 		<li>
 			<h3><?= $info['title'] ?></h3>
 			<?php if (!empty($info['synopsis'])) : ?>
@@ -104,12 +102,22 @@ foreach ($issue['stories'] as $filename) {
 
 <?php foreach ($issueHtml as $index => $story) : ?>
 	<?php $info = $issue['storyData'][$index]; ?>
-	<section>
-	<h2><?= $info['title'] ?></h2>
-	<?= $story ?>
-	<?php if (!empty($info['stinger'])) : ?>
-		<p class="tbc"><?= $info['stinger'] ?></p>
+	<?php if (!empty($info['interstitial'])) : ?>
+		<?php $pic = $info['interstitial']; ?>
+		<section class="interstitial">
+			<figure>
+				<img src="<?= $pic['src'] ?>" alt="<?= $pic['alt'] ?>">
+				<figcaption><a href="<?= $pic['link'] ?>"><?= $pic['caption'] ?></a></figcaption>
+			</figure>
+		</section>
+	<?php else : ?>
+		<section>
+			<h2><?= $info['title'] ?></h2>
+			<?= $story ?>
+			<?php if (!empty($info['stinger'])) : ?>
+				<p class="tbc"><?= $info['stinger'] ?></p>
+			<?php endif; ?>
+		</section>
 	<?php endif; ?>
-	</section>
 <?php endforeach; ?>
 </body></html>

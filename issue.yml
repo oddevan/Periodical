@@ -4,6 +4,8 @@ issue: 1
 stories:
   - letter.md
   - Bored.md
+  - inter-1.md
+  - inter-2.md
   - The Meeting.md
   - backpage.md
 cover:
